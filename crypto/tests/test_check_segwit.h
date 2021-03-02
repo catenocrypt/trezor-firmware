@@ -1,6 +1,6 @@
 #include "segwit_addr.h"
 
-static char* valid_checksum[] = {
+static const char* valid_checksum[] = {
     "A12UEL5L",
     "an83characterlonghumanreadablepartthatcontainsthenumber1andtheexcludedchar"
     "actersbio1tt5tgs",
@@ -10,7 +10,7 @@ static char* valid_checksum[] = {
     "split1checkupstagehandshakeupstreamerranterredcaperred2y9e3w",
 };
 
-static char* invalid_checksum[] = {
+static const char* invalid_checksum[] = {
     " 1nwldj5",
     "\x7f"
     "1axkwrx",
@@ -63,7 +63,7 @@ static struct valid_address_data valid_address[] = {
       0xa1, 0x87, 0x90, 0x5e, 0x52, 0x66, 0x36, 0x2b, 0x99, 0xd5, 0xe9, 0x1c,
       0x6c, 0xe2, 0x4d, 0x16, 0x5d, 0xab, 0x93, 0xe8, 0x64, 0x33}}};
 
-static char* invalid_address[] = {
+static const char* invalid_address[] = {
     "tc1qw508d6qejxtdg4y5r3zarvary0c5xw7kg3g4ty",
     "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5",
     "BC13W508D6QEJXTDG4Y5R3ZARVARY0C5XW7KN40WF2",

@@ -34,9 +34,9 @@ uint32_t bech32_polymod_step(uint32_t pre) {
         (-((b >> 4) & 1) & 0x2a1462b3UL);
 }
 
-char* segwit_charset = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
+const char* segwit_charset = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
 
-int8_t segwit_charset_rev[128] = {
+const int8_t segwit_charset_rev[128] = {
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,

@@ -23,7 +23,7 @@ typedef struct poly1305_state_internal_t {
 } poly1305_state_internal_t;
 
 /* interpret four 8 bit unsigned integers as a 32 bit unsigned integer in little endian */
-static unsigned long
+unsigned long
 U8TO32(const unsigned char *p) {
 	return
 		(((unsigned long)(p[0] & 0xff)      ) |

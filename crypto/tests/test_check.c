@@ -951,7 +951,7 @@ END_TEST
 
 // https://tools.ietf.org/html/rfc4648#section-10
 START_TEST(test_base32_rfc4648) {
-  static struct {
+  static const struct {
     const char *decoded;
     const char *encoded;
     const char *encoded_lowercase;
@@ -1000,7 +1000,7 @@ END_TEST
 // from
 // https://github.com/bitcoin/bitcoin/blob/master/src/test/data/base58_keys_valid.json
 START_TEST(test_base58) {
-  static char *base58_vector[] = {
+  static const char *base58_vector[] = {
       "0065a16059864a2fdbc7c99a4723a8395bc6f188eb",
       "1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i",
       "0574f209f6ea907e2ea48f74fae05782ae8a665257",
@@ -1131,7 +1131,7 @@ END_TEST
 
 // Graphene Base85CheckEncoding
 START_TEST(test_base58gph) {
-  static char *base58_vector[] = {
+  static const char *base58_vector[] = {
       "02e649f63f8e8121345fd7f47d0d185a3ccaa843115cd2e9392dcd9b82263bc680",
       "6dumtt9swxCqwdPZBGXh9YmHoEjFFnNfwHaTqRbQTghGAY2gRz",
       "021c7359cd885c0e319924d97e3980206ad64387aff54908241125b3a88b55ca16",
@@ -3601,7 +3601,7 @@ START_TEST(test_aes) {
   const char **ivp, **plainp, **cipherp;
 
   // ECB
-  static char *ecb_vector[] = {
+  static const char *ecb_vector[] = {
       // plain                            cipher
       "6bc1bee22e409f96e93d7e117393172a",
       "f3eed1bdb5d2a03c064b5a7e3db181f8",
@@ -3638,7 +3638,7 @@ START_TEST(test_aes) {
   }
 
   // CBC
-  static char *cbc_vector[] = {
+  static const char *cbc_vector[] = {
       // iv                               plain cipher
       "000102030405060708090A0B0C0D0E0F",
       "6bc1bee22e409f96e93d7e117393172a",
@@ -3684,7 +3684,7 @@ START_TEST(test_aes) {
   }
 
   // CFB
-  static char *cfb_vector[] = {
+  static const char *cfb_vector[] = {
       "000102030405060708090A0B0C0D0E0F",
       "6bc1bee22e409f96e93d7e117393172a",
       "DC7E84BFDA79164B7ECD8486985D3860",
@@ -3729,7 +3729,7 @@ START_TEST(test_aes) {
   }
 
   // OFB
-  static char *ofb_vector[] = {
+  static const char *ofb_vector[] = {
       "000102030405060708090A0B0C0D0E0F",
       "6bc1bee22e409f96e93d7e117393172a",
       "dc7e84bfda79164b7ecd8486985d3860",
@@ -3774,7 +3774,7 @@ START_TEST(test_aes) {
   }
 
   // CTR
-  static char *ctr_vector[] = {
+  static const char *ctr_vector[] = {
       // plain                            cipher
       "6bc1bee22e409f96e93d7e117393172a",
       "601ec313775789a5b7a7f504bbf3d228",
@@ -4781,7 +4781,7 @@ START_TEST(test_hmac_drbg) {
 END_TEST
 
 START_TEST(test_mnemonic) {
-  static char *vectors[] = {
+  static const char *vectors[] = {
       "00000000000000000000000000000000",
       "abandon abandon abandon abandon abandon abandon abandon abandon abandon "
       "abandon abandon about",
@@ -4936,7 +4936,7 @@ START_TEST(test_mnemonic) {
 END_TEST
 
 START_TEST(test_mnemonic_check) {
-  static char *vectors_ok[] = {
+  static const char *vectors_ok[] = {
       "abandon abandon abandon abandon abandon abandon abandon abandon abandon "
       "abandon abandon about",
       "legal winner thank year wave sausage worth useful legal winner thank "
@@ -4992,7 +4992,7 @@ START_TEST(test_mnemonic_check) {
       "away coconut",
       0,
   };
-  static char *vectors_fail[] = {
+  static const char *vectors_fail[] = {
       "above abandon abandon abandon abandon abandon abandon abandon abandon "
       "abandon abandon about",
       "above winner thank year wave sausage worth useful legal winner thank "
@@ -5115,7 +5115,7 @@ START_TEST(test_mnemonic_check) {
 END_TEST
 
 START_TEST(test_mnemonic_to_bits) {
-  static char *vectors[] = {
+  static const char *vectors[] = {
       "00000000000000000000000000000000",
       "abandon abandon abandon abandon abandon abandon abandon abandon abandon "
       "abandon abandon about",
@@ -6128,7 +6128,7 @@ END_TEST
 START_TEST(test_ed25519) {
   // test vectors from
   // https://github.com/torproject/tor/blob/master/src/test/ed25519_vectors.inc
-  static char *vectors[] = {
+  static const char *vectors[] = {
       "26c76712d89d906e6672dafa614c42e5cb1caac8c6568e4d2493087db51f0d3"
       "6",  // secret
       "c2247870536a192d142d056abefca68d6193158e7c1a59c1654c954eccaff89"
@@ -6850,7 +6850,7 @@ START_TEST(test_bip32_ecdh_errors) {
 END_TEST
 
 START_TEST(test_output_script) {
-  static char *vectors[] = {
+  static const char *vectors[] = {
       "76A914010966776006953D5567439E5E39F86A0D273BEE88AC",
       "16UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM",
       "A914010966776006953D5567439E5E39F86A0D273BEE87",
@@ -6978,7 +6978,7 @@ START_TEST(test_ethereum_pubkeyhash) {
 END_TEST
 
 START_TEST(test_ethereum_address) {
-  static char *vectors[] = {"52908400098527886E0F7030069857D2E4169EE7",
+  static const char *vectors[] = {"52908400098527886E0F7030069857D2E4169EE7",
                                   "8617E340B3D01FA5F11F306F4090FD50E238070D",
                                   "de709f2102306220921060314715629080e2fb77",
                                   "27b1fdb04752bbc536007a920d24acb045561c26",
@@ -7010,7 +7010,7 @@ START_TEST(test_rsk_address) {
   uint8_t addr[20];
   char address[41];
 
-  static char *rskip60_chain30[] = {
+  static const char *rskip60_chain30[] = {
       "5aaEB6053f3e94c9b9a09f33669435E7ef1bEAeD",
       "Fb6916095cA1Df60bb79ce92cE3EA74c37c5d359",
       "DBF03B407c01E7CD3cBea99509D93F8Dddc8C6FB",
@@ -7023,7 +7023,7 @@ START_TEST(test_rsk_address) {
     vec++;
   }
 
-  static char *rskip60_chain31[] = {
+  static const char *rskip60_chain31[] = {
       "5aAeb6053F3e94c9b9A09F33669435E7EF1BEaEd",
       "Fb6916095CA1dF60bb79CE92ce3Ea74C37c5D359",
       "dbF03B407C01E7cd3cbEa99509D93f8dDDc8C6fB",
@@ -8638,7 +8638,7 @@ static void test_compress_coord(const char *k_raw) {
 }
 
 START_TEST(test_compress_coords) {
-  static char *k_raw[] = {
+  static const char *k_raw[] = {
       "dc05960ac673fd59554c98655e26722d007bb7ada0c8ff00883fdee70783d0be",
       "41e41e0a218c980411108a0a58cf88f528c828b4d6f0d2c86234bc2504bdc3cd",
       "1d963ddcb79f6028a32cadd2421ff7fff969bff5774f73063dab41519b3da175",

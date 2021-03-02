@@ -1,6 +1,6 @@
 #include "cash_addr.h"
 
-static char* valid_cashchecksum[] = {
+static const char* valid_cashchecksum[] = {
     "prefix:x64nx6hz",
     "p:gpf8m4h7",
     "bitcoincash:qpzry9x8gf2tvdw0s3jn54khce6mua7lcw20ayyn",
